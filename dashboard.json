@@ -1,0 +1,1215 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 4,
+    "links": [],
+    "panels": [
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 0,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "expand": false,
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"BTC_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400\r\n",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 0,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"BTC_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 500",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "BTC",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 0
+        },
+        "id": 6,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"ETH_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 0,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"ETH_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "ETH",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 16,
+          "y": 0
+        },
+        "id": 10,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"XRP_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 1,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"XRP_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "XRP",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 0,
+          "y": 7
+        },
+        "id": 3,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 1,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"BNB_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 100",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 1,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"BNB_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 200",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "BNB",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 7
+        },
+        "id": 7,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"SOL_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300\r\n",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 1,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"SOL_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "SOL",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 16,
+          "y": 7
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"DOGE_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 0,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"DOGE_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "DOGE",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 0,
+          "y": 14
+        },
+        "id": 1,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "builderOptions": {
+              "fields": [],
+              "filters": [],
+              "groupBy": [
+                "timestamp",
+                "close"
+              ],
+              "limit": "100",
+              "metrics": [],
+              "mode": "trend",
+              "orderBy": [
+                {
+                  "dir": "DESC",
+                  "name": "timestamp"
+                }
+              ],
+              "partitionBy": [],
+              "sampleByAlignTo": "CALENDAR",
+              "table": "ADA_USDT",
+              "timeField": "timestamp"
+            },
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9rsc2idjdhcf"
+            },
+            "format": 0,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "filters": [],
+                "groupBy": [
+                  "timestamp",
+                  "close"
+                ],
+                "limit": "100",
+                "metrics": [],
+                "mode": "trend",
+                "orderBy": [
+                  {
+                    "dir": "DESC",
+                    "name": "timestamp"
+                  }
+                ],
+                "partitionBy": [],
+                "sampleByAlignTo": "CALENDAR",
+                "table": "ADA_USDT",
+                "timeField": "timestamp"
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"ADA_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 0
+          },
+          {
+            "builderOptions": {
+              "fields": [],
+              "filters": [],
+              "groupBy": [
+                "timestamp",
+                "close"
+              ],
+              "limit": "200",
+              "metrics": [],
+              "mode": "trend",
+              "orderBy": [
+                {
+                  "dir": "DESC",
+                  "name": "timestamp"
+                }
+              ],
+              "partitionBy": [],
+              "sampleByAlignTo": "CALENDAR",
+              "table": "ADA_USDT_USDT",
+              "timeField": "timestamp"
+            },
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9rsc2idjdhcf"
+            },
+            "format": 0,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "filters": [],
+                "groupBy": [
+                  "timestamp",
+                  "close"
+                ],
+                "limit": "200",
+                "metrics": [],
+                "mode": "trend",
+                "orderBy": [
+                  {
+                    "dir": "DESC",
+                    "name": "timestamp"
+                  }
+                ],
+                "partitionBy": [],
+                "sampleByAlignTo": "CALENDAR",
+                "table": "ADA_USDT_USDT",
+                "timeField": "timestamp"
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"ADA_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "ADA ",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 8,
+          "y": 14
+        },
+        "id": 9,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 1,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"TRX_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 1,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"TRX_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "TRX",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "questdb-questdb-datasource",
+          "uid": "ae9s1iy0u00e8b"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 7,
+          "w": 8,
+          "x": 16,
+          "y": 14
+        },
+        "id": 8,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.4.0",
+        "targets": [
+          {
+            "format": 1,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"SUI_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 300",
+            "refId": "Spot",
+            "selectedFormat": 2
+          },
+          {
+            "datasource": {
+              "type": "questdb-questdb-datasource",
+              "uid": "ae9s1iy0u00e8b"
+            },
+            "format": 0,
+            "hide": false,
+            "meta": {
+              "builderOptions": {
+                "fields": [],
+                "limit": "",
+                "mode": "list",
+                "timeField": ""
+              }
+            },
+            "queryType": "sql",
+            "rawSql": "SELECT timestamp as time, timestamp, close FROM \"SUI_USDT_USDT\" WHERE $__timeFilter(timestamp) SAMPLE BY $__sampleByInterval ALIGN TO CALENDAR ORDER BY timestamp DESC LIMIT 400",
+            "refId": "Perpetual",
+            "selectedFormat": 2
+          }
+        ],
+        "title": "SUI",
+        "type": "timeseries"
+      }
+    ],
+    "preload": false,
+    "refresh": "250ms",
+    "schemaVersion": 40,
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-5m",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "250ms",
+        "500ms",
+        "1s",
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "Bybit Spot vs Perpetual",
+    "uid": "ee9s5vvipn9c0a",
+    "version": 1,
+    "weekStart": ""
+  }

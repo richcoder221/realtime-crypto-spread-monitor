@@ -1,0 +1,11 @@
+asyncio
+asyncpg
+pandas
+numpy
+pyarrow
+tqdm
+ccxt
+questdb
+argparse
+logging
+confluent-kafka
