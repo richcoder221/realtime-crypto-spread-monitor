@@ -1,6 +1,9 @@
 # Realtime Crypto Spread Monitor
 A real-time monitoring dashboard for cryptocurrency spot and perpetual price spreads.
-![](https://github.com/richcoder221/realtime-crypto-spread-monitor/blob/main/demo.gif=1280x540)
+
+<img src="https://github.com/richcoder221/realtime-crypto-spread-monitor/blob/main/demo.gif" alt="Live Dashboard" width="1600">
+
+
 ## Technology Stack
 - **Data Source**: CCXT Pro for cryptocurrency exchange WebSocket
 - **Message Queue**: Apache Kafka with Redpanda for high-performance streaming
