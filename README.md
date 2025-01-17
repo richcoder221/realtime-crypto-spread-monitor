@@ -1,4 +1,4 @@
-# Realtime Crypto Spread Monitor
+# Realtime Spot Perpetual Spread Monitoring Dashboard
 A real-time monitoring dashboard for cryptocurrency spot and perpetual price spreads.
 
 <img src="https://github.com/richcoder221/realtime-crypto-spread-monitor/blob/main/dashboard.gif" alt="Live Dashboard" width="1600">
